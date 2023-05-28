@@ -59,8 +59,31 @@ namespace ProjetoBD
                 P.PlayerRegion = reader["region"].ToString();
                 MessageBox.Show(P.ToString());
             }
-             
+                
             cn.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Teams:");
+
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Projeto_equipa", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Team T = new Team();
+                T.TeamID = reader["id_equipa"].ToString();
+                T.TeamName = reader["nome"].ToString();
+                T.TeamCountry = reader["country"].ToString();
+                MessageBox.Show(T.ToString());
+            }
+
+            cn.Close();
+        }
+    
     }
 }
