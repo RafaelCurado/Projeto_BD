@@ -1,4 +1,4 @@
-﻿USE ProjetoBD
+﻿USE p1g1
 GO
 
 INSERT INTO [Projeto_habilidade] ([name], [descricao])
@@ -39,39 +39,40 @@ VALUES
     ('Personagem 5', 'Habilidade 13', 'Habilidade 14', 'Habilidade 15');
 
 
-SET IDENTITY_INSERT Projeto_jogador ON
-INSERT INTO [Projeto_jogador] (id,name,region,nick,personagem_name)
+--SET IDENTITY_INSERT Projeto_jogador ON
+INSERT INTO [Projeto_jogador] (name,region,nick,personagem_name)
 VALUES
-	(1,'Rafael Curado','Aveiro','rafa','Personagem 1'),
-	(2,'Elmo Powers','Tamil Nadu','consectetuer','Personagem 1'),
-	(3,'Tallulah Edwards','Salzburg','enim','Personagem 1'),
-	(4,'Matthew Norris','Special Region of Yogyakarta','Cum','Personagem 1'),
-	(5,'Jocelyn Sawyer','Santa Catarina','urna.','Personagem 1'),
-	(6,'Brandon Stanley','Newfoundland and Labrador','mi','Personagem 1'),
-	(7,'Halee Alford','Puno','penatibus','Personagem 1'),
-	(8,'Carter Diaz','FATA','Nullam','Personagem 1'),
-	(9,'Ezekiel Romero','Hải Phòng','Vivamus','Personagem 1'),
-	(10,'Ivory Francis','Oyo','lectus','Personagem 1');
-SET IDENTITY_INSERT Projeto_jogador OFF
+	('Rafael Curado','Aveiro','rafa','Personagem 1'),
+	('Elmo Powers','Tamil Nadu','consectetuer','Personagem 1'),
+	('Tallulah Edwards','Salzburg','enim','Personagem 1'),
+	('Matthew Norris','Special Region of Yogyakarta','Cum','Personagem 1'),
+	('Jocelyn Sawyer','Santa Catarina','urna.','Personagem 1'),
+	('Brandon Stanley','Newfoundland and Labrador','mi','Personagem 1'),
+	('Halee Alford','Puno','penatibus','Personagem 1'),
+	('Carter Diaz','FATA','Nullam','Personagem 1'),
+	('Ezekiel Romero','Hải Phòng','Vivamus','Personagem 1'),
+	('Ivory Francis','Oyo','lectus','Personagem 1');
+--SET IDENTITY_INSERT Projeto_jogador OFF
 
-
-SET IDENTITY_INSERT Projeto_torneio ON
-INSERT INTO [Projeto_torneio] (id_torneio,name,date,region)
+INSERT INTO [Projeto_treinador] (name,region)
 VALUES
-	  (1,'Caleb Stuart','Sep 9, 2023','Nova Scotia'),
-	  (2,'Nigel Williams','Mar 30, 2024','Central Region');
-SET IDENTITY_INSERT Projeto_torneio OFF
+	('John Doe', 'North America'),
+	('Jane Smith', 'Europe');
 
 
+INSERT INTO [Projeto_torneio] (name,date,region)
+VALUES
+	  ('Caleb Stuart','Sep 9, 2023','Nova Scotia'),
+	  ('Nigel Williams','Mar 30, 2024','Central Region');
 
   -- PRA JÁ, TER SÓ 5 PERSONAGENS
 
 
 
-INSERT INTO [Projeto_equipa] ([id_jogador1], [id_jogador2], [id_jogador3], [id_jogador4], [id_jogador5], [nome], [country], [region])
+INSERT INTO [Projeto_equipa] ([id_jogador1], [id_jogador2], [id_jogador3], [id_jogador4], [id_jogador5],[id_treinador], [nome], [country], [region])
 VALUES
-    (1, 2, 3, 4, 5, 'Team 1', 'Country 1', 'Region 1'),
-    (6, 7, 8, 9, 10, 'Team 2', 'Country 2', 'Region 2');
+    (1, 2, 3, 4, 5, 1, 'Team 1', 'Country 1', 'Region 1'),
+    (6, 7, 8, 9, 10, 2, 'Team 2', 'Country 2', 'Region 2');
     --(11, 12, 13, 14, 15, 'Team 3', 'Country 3', 'Region 3'),
     --(16, 17, 18, 19, 20, 'Team 4', 'Country 4', 'Region 4'),
 	-- pra já só da para ter 2 equipas

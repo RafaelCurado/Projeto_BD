@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Equipas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddTreinadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Treinadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Jogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Torneio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Ranking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RemoveJogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Jogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddJogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

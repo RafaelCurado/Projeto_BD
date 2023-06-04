@@ -1,7 +1,8 @@
-USE ProjetoBD
+USE p1g1
 GO
 
 SELECT * FROM Projeto_jogador
+SELECT * FROM Projeto_treinador
 SELECT * FROM Projeto_equipa
 SELECT * FROM Projeto_torneio
 SELECT * FROM Projeto_personagem
