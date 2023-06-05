@@ -12,6 +12,4 @@ SELECT * FROM Projeto_jogo
 SELECT * FROM Projeto_transactions
 SELECT * FROM Projeto_settings
 
---SELECT * FROM Projeto_inventory
---SELECT * FROM Projeto_item
 
