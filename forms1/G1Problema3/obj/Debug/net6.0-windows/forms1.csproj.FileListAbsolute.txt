@@ -32,3 +32,5 @@ C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windo
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.pdb
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.genruntimeconfig.cache
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\ref\forms1.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.Transacoes.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.AddTransacao.resources

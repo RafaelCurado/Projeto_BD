@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing;
 using System.Security.Cryptography;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace G1Problema3
 {
@@ -52,12 +53,21 @@ namespace G1Problema3
                         da.Fill(ds, "Form1");
                         dt = ds.Tables["Form1"];
                         int i;
+
                         for (i = 0; i <= dt.Rows.Count - 1; i++)
                         {
-                            listView1.Items.Add(dt.Rows[i].ItemArray[0].ToString());
-                            listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
-                            listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
-                            listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
+                            if (string.IsNullOrEmpty(textBox1.Text))
+                            {
+                            // A TextBox está vazia
+                            //MessageBox.Show("A TextBox está vazia");
+                                
+
+                                listView1.Items.Add(dt.Rows[i].ItemArray[0].ToString());
+                                listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
+                                listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
+                                listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
+                            }
+                            
                         }
                     }
                 }
@@ -90,6 +100,51 @@ namespace G1Problema3
         {
 
         }
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            // Limpar a lista atual
+            listView1.Items.Clear();
+
+            // Determinar a coluna clicada
+            string coluna = "";
+
+            switch (e.Column)
+            {
+                case 0:
+                    coluna = "ID";
+                    break;
+                case 1:
+                    coluna = "Name";
+                    break;
+                case 2:
+                    coluna = "Region";
+                    break;
+                case 3:
+                    coluna = "Nick";
+                    break;
+            }
+
+            // Montar a consulta SQL com a ordenação adequada
+            string consultaSQL = $"SELECT * FROM Projeto_jogador ORDER BY {coluna}";
+            SqlConnection CN = new SqlConnection(a);
+            // Executar a consulta SQL
+            SqlCommand sqlcmd = new SqlCommand(consultaSQL, CN);
+            da = new SqlDataAdapter(sqlcmd);
+            ds = new DataSet();
+            da.Fill(ds, "Form1");
+            dt = ds.Tables["Form1"];
+
+            // Preencher a listView1 com os resultados
+            int i;
+            for (i = 0; i <= dt.Rows.Count - 1; i++)
+            {
+                listView1.Items.Add(dt.Rows[i].ItemArray[0].ToString());
+                listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
+                listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
+                listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
+            }
+        }
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -186,6 +241,7 @@ namespace G1Problema3
                     if (CN.State == ConnectionState.Open)
                     {
 
+
                         if (listView1.SelectedItems.Count > 0)
                         {
                             listView3.Items.Clear();
@@ -198,8 +254,8 @@ namespace G1Problema3
                             SqlCommand query = new SqlCommand("SELECT habilidade_nome, habilidade_descricao FROM obter_habilidades_personagem('" + personagem + "');", CN);
 
                             // Resto do código para executar a query e processar os resultados
-                            // ...
-                            da = new SqlDataAdapter(query);
+                            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query);
+                            da = sqlDataAdapter;
                             ds = new DataSet();
                             da.Fill(ds, "Form1");
                             dt = ds.Tables["Form1"];
@@ -233,9 +289,74 @@ namespace G1Problema3
         private void button5_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
+            textBox1.Clear();
             SqlConnection CN = new SqlConnection(a);
             var content = getTableContent(CN);
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            String nick = textBox1.Text;
+            SqlConnection CN = new SqlConnection(a);
+
+            try
+            {
+                CN.Open();
+                if (CN.State == ConnectionState.Open)
+                {
+                        try
+                        {
+                            SqlCommand query = new SqlCommand("SELECT id, name, region, nick FROM Projeto_jogador WHERE nick = @nick", CN);
+                            query.Parameters.AddWithValue("@nick", nick);
+
+                            SqlDataAdapter da = new SqlDataAdapter(query);
+                            DataTable dt = new DataTable();
+                            da.Fill(dt);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                foreach (DataRow row in dt.Rows)
+                                {
+                                    string jogadorId = row["id"].ToString();
+                                    string jogadorName = row["name"].ToString();
+                                    string jogadorRegion = row["region"].ToString();
+                                    string jogadorNick = row["nick"].ToString();
+
+                                    ListViewItem item = new ListViewItem(jogadorId);
+                                    item.SubItems.Add(jogadorName);
+                                    item.SubItems.Add(jogadorRegion);
+                                    item.SubItems.Add(jogadorNick);
+                                    listView1.Items.Clear();
+                                    listView1.Items.Add(item);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Jogador não encontrado.");
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Jogador não encontrado");
+                        }
+                    // Mudar na linha anterior o nome da table "Hello" para outro nome que esteja na bd
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open connection to database due to the error \r\n" + ex.Message, "Connection Error", MessageBoxButtons.OK);
+            }
+
+            if (CN.State == ConnectionState.Open)
+                CN.Close();
+        }
+
+
     }
 }

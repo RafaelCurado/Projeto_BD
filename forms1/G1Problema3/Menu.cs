@@ -1,4 +1,5 @@
-﻿using System;
+﻿using forms1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,6 +49,13 @@ namespace G1Problema3
         private void button5_Click(object sender, EventArgs e)
         {
             Treinador form = new Treinador();
+            form.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Transacoes form = new Transacoes();
             form.Show();
             this.Hide();
         }

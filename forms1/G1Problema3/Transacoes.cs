@@ -1,4 +1,5 @@
-﻿using System;
+﻿using G1Problema3;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,30 +10,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace G1Problema3
+namespace forms1
 {
-    public partial class Equipas : Form
+    public partial class Transacoes : Form
     {
-        private string equipa_1;
-        private string equipa_2;
         String a = "Data Source = mednat.ieeta.pt\\SQLSERVER,8101; Initial Catalog = p1g1; uid = p1g1; password = apexlol";
         DataTable dt;
         SqlDataAdapter da;
         DataSet ds;
-        public Equipas(String equipa1, String equipa2)
+        public Transacoes()
         {
             InitializeComponent();
-            equipa_1 = equipa1;
-            equipa_2 = equipa2;
             SqlConnection CN = new SqlConnection(a);
             var content = getTableContent(CN);
 
-            listView1.Columns.Add("Nome", 150, HorizontalAlignment.Left);
-            listView1.Columns.Add("País", 150, HorizontalAlignment.Left);
-            listView1.Columns.Add("Region", 150, HorizontalAlignment.Left);
-
-
-
+            listView1.Columns.Add("Jogador", 150);
+            listView1.Columns.Add("Type", 100, HorizontalAlignment.Left);
+            listView1.Columns.Add("Date", 150, HorizontalAlignment.Left);
+            listView1.Columns.Add("Value", 70, HorizontalAlignment.Left);
             listView1.View = View.Details;
         }
 
@@ -46,7 +41,7 @@ namespace G1Problema3
                 if (CN.State == ConnectionState.Open)
                 {
 
-                    SqlCommand sqlcmd = new SqlCommand("select * from Projeto_equipa", CN);
+                    SqlCommand sqlcmd = new SqlCommand("SELECT t.*, j.name AS nome_jogador FROM Projeto_transactions t INNER JOIN Projeto_jogador j ON t.id_jogador = j.id;", CN);
 
                     da = new SqlDataAdapter(sqlcmd);
                     ds = new DataSet();
@@ -55,10 +50,10 @@ namespace G1Problema3
                     int i;
                     for (i = 0; i <= dt.Rows.Count - 1; i++)
                     {
-                        listView1.Items.Add(dt.Rows[i].ItemArray[6].ToString());
-                        listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[7].ToString());
-                        listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[8].ToString());
-
+                        listView1.Items.Add(dt.Rows[i].ItemArray[5].ToString());
+                        listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
+                        listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
+                        listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
                     }
                 }
             }
@@ -73,21 +68,23 @@ namespace G1Problema3
             return str;
         }
 
-        private void Equipas_Load(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Jogos form = new Jogos(null);
+            
+            Menu form = new Menu();
             form.Show();
             this.Hide();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            AddTransacao form = new AddTransacao();
+            form.Show();
         }
     }
 }
