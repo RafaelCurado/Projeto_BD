@@ -13,7 +13,7 @@ namespace forms1
 {
     public partial class AddTransacao : Form
     {
-        String a = "Data Source = mednat.ieeta.pt\\SQLSERVER,8101; Initial Catalog = p1g1; uid = p1g1; password = apexlol";
+        String a = "Data Source = " + AppData.DB_STRING + "; " + "Initial Catalog = " + AppData.username + "; uid = " + AppData.username + "; " + "password = " + AppData.password;
 
         public AddTransacao()
         {
