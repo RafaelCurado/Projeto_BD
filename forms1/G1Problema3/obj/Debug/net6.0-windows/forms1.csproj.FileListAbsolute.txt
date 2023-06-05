@@ -70,3 +70,4 @@ D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.pdb
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.genruntimeconfig.cache
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\ref\forms1.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.Treinadores.resources

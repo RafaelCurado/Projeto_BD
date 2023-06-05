@@ -48,7 +48,7 @@ namespace G1Problema3
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Treinador form = new Treinador();
+            Treinadores form = new Treinadores();
             form.Show();
             this.Hide();
         }
