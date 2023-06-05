@@ -40,18 +40,18 @@ VALUES
 
 
 --SET IDENTITY_INSERT Projeto_jogador ON
-INSERT INTO [Projeto_jogador] (name,region,nick,personagem_name)
+INSERT INTO [Projeto_jogador] (name,region,nick,personagem_name,balance)
 VALUES
-	('Rafael Curado','Aveiro','rafa','Personagem 1'),
-	('Elmo Powers','Tamil Nadu','consectetuer','Personagem 1'),
-	('Tallulah Edwards','Salzburg','enim','Personagem 1'),
-	('Matthew Norris','Special Region of Yogyakarta','Cum','Personagem 1'),
-	('Jocelyn Sawyer','Santa Catarina','urna.','Personagem 1'),
-	('Brandon Stanley','Newfoundland and Labrador','mi','Personagem 1'),
-	('Halee Alford','Puno','penatibus','Personagem 1'),
-	('Carter Diaz','FATA','Nullam','Personagem 1'),
-	('Ezekiel Romero','Hải Phòng','Vivamus','Personagem 1'),
-	('Ivory Francis','Oyo','lectus','Personagem 1');
+	('Rafael Curado','Aveiro','rafa','Personagem 1',300),
+	('Elmo Powers','Tamil Nadu','consectetuer','Personagem 1',320),
+	('Tallulah Edwards','Salzburg','enim','Personagem 1',295),
+	('Matthew Norris','Special Region of Yogyakarta','Cum','Personagem 1',180),
+	('Jocelyn Sawyer','Santa Catarina','urna.','Personagem 1',425),
+	('Brandon Stanley','Newfoundland and Labrador','mi','Personagem 1',155),
+	('Halee Alford','Puno','penatibus','Personagem 1',150),
+	('Carter Diaz','FATA','Nullam','Personagem 1',50),
+	('Ezekiel Romero','Hải Phòng','Vivamus','Personagem 1',100),
+	('Ivory Francis','Oyo','lectus','Personagem 1',490);
 --SET IDENTITY_INSERT Projeto_jogador OFF
 
 INSERT INTO [Projeto_treinador] (name,region)

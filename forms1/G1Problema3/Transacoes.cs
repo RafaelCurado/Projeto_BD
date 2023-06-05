@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace forms1
 {
@@ -75,8 +76,8 @@ namespace forms1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            Menu form = new Menu();
+
+            G1Problema3.Menu form = new G1Problema3.Menu();
             form.Show();
             this.Hide();
         }
@@ -85,6 +86,13 @@ namespace forms1
         {
             AddTransacao form = new AddTransacao();
             form.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            SqlConnection CN = new SqlConnection(a);
+            var content = getTableContent(CN);
         }
     }
 }

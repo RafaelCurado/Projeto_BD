@@ -29,6 +29,7 @@ CREATE TABLE [Projeto_jogador] (
     [region] VARCHAR(50) NULL,
     [nick] VARCHAR(255) NULL UNIQUE,
 	[personagem_name] VARCHAR(255),
+	[balance] INTEGER DEFAULT 0,
     PRIMARY KEY ([id]),
 	FOREIGN KEY ([personagem_name]) REFERENCES Projeto_personagem(name),
 );

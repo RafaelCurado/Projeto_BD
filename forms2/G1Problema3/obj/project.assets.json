@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Universidade\\ANO3\\BD\\projeto\\trabalho_final\\forms\\G1Problema3\\ProjetoBD.csproj",
+      "projectUniqueName": "D:\\Universidade\\ANO3\\BD\\projeto\\trabalho_final\\forms2\\G1Problema3\\ProjetoBD.csproj",
       "projectName": "ProjetoBD",
-      "projectPath": "D:\\Universidade\\ANO3\\BD\\projeto\\trabalho_final\\forms\\G1Problema3\\ProjetoBD.csproj",
+      "projectPath": "D:\\Universidade\\ANO3\\BD\\projeto\\trabalho_final\\forms2\\G1Problema3\\ProjetoBD.csproj",
       "packagesPath": "C:\\Users\\Rafael Curado\\.nuget\\packages\\",
-      "outputPath": "D:\\Universidade\\ANO3\\BD\\projeto\\trabalho_final\\forms\\G1Problema3\\obj\\",
+      "outputPath": "D:\\Universidade\\ANO3\\BD\\projeto\\trabalho_final\\forms2\\G1Problema3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rafael Curado\\AppData\\Roaming\\NuGet\\NuGet.Config",

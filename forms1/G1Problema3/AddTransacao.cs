@@ -65,7 +65,7 @@ namespace forms1
                         }
                         if(tipoTransacao == "Purchase")
                         {
-                            SqlCommand saldoCommand = new SqlCommand("SELECT saldo FROM Projeto_jogador WHERE nick = @nick", connection);
+                            SqlCommand saldoCommand = new SqlCommand("SELECT balance FROM Projeto_jogador WHERE nick = @nick", connection);
                             saldoCommand.Parameters.AddWithValue("@nick", nick);
 
                             decimal saldoAtual = Convert.ToDecimal(saldoCommand.ExecuteScalar());
@@ -74,13 +74,13 @@ namespace forms1
                             {
                                 // Atualizar o saldo do jogador
                                 decimal novoSaldo = saldoAtual - valor;
-                                SqlCommand atualizarSaldoCommand = new SqlCommand("UPDATE Projeto_jogador SET saldo = @novoSaldo WHERE nick = @nick", connection);
+                                SqlCommand atualizarSaldoCommand = new SqlCommand("UPDATE Projeto_jogador SET balance = @novoSaldo WHERE nick = @nick", connection);
                                 atualizarSaldoCommand.Parameters.AddWithValue("@novoSaldo", novoSaldo);
                                 atualizarSaldoCommand.Parameters.AddWithValue("@nick", nick);
                                 atualizarSaldoCommand.ExecuteNonQuery();
 
-                                // Inserir a transação na tabela Projeto_transaction
-                                SqlCommand inserirTransacaoCommand = new SqlCommand("INSERT INTO Projeto_transaction (type, date, value, id_jogador) VALUES (@tipoTransacao, GETDATE(), @valor, @id_jogador)", connection);
+                                // Inserir a transação na tabela Projeto_transactions
+                                SqlCommand inserirTransacaoCommand = new SqlCommand("INSERT INTO Projeto_transactions (type, date, value, id_jogador) VALUES (@tipoTransacao, GETDATE(), @valor, @id_jogador)", connection);
                                 inserirTransacaoCommand.Parameters.AddWithValue("@tipoTransacao", tipoTransacao);
                                 inserirTransacaoCommand.Parameters.AddWithValue("@valor", valor);
                                 inserirTransacaoCommand.Parameters.AddWithValue("@id_jogador", idJogador);
@@ -104,7 +104,7 @@ namespace forms1
                             command.Parameters.AddWithValue("@valor", valor);
 
                             
-                            command = new SqlCommand("UPDATE Projeto_jogador SET saldo = saldo + @valor WHERE id = @idJogador", connection);
+                            command = new SqlCommand("UPDATE Projeto_jogador SET balance = balance + @valor WHERE id = @idJogador", connection);
                             command.Parameters.AddWithValue("@idJogador", idJogador);
                             command.Parameters.AddWithValue("@valor", valor);
 
@@ -121,7 +121,7 @@ namespace forms1
                             }
                         }else if(tipoTransacao == "Withdrawal")
                         {
-                            SqlCommand saldoCommand = new SqlCommand("SELECT saldo FROM Projeto_jogador WHERE nick = @nick", connection);
+                            SqlCommand saldoCommand = new SqlCommand("SELECT balance FROM Projeto_jogador WHERE nick = @nick", connection);
                             saldoCommand.Parameters.AddWithValue("@nick", nick);
 
                             decimal saldoAtual = Convert.ToDecimal(saldoCommand.ExecuteScalar());
@@ -130,13 +130,13 @@ namespace forms1
                             {
                                 // Atualizar o saldo do jogador
                                 decimal novoSaldo = saldoAtual - valor;
-                                SqlCommand atualizarSaldoCommand = new SqlCommand("UPDATE Projeto_jogador SET saldo = @novoSaldo WHERE nick = @nick", connection);
+                                SqlCommand atualizarSaldoCommand = new SqlCommand("UPDATE Projeto_jogador SET balance = @novoSaldo WHERE nick = @nick", connection);
                                 atualizarSaldoCommand.Parameters.AddWithValue("@novoSaldo", novoSaldo);
                                 atualizarSaldoCommand.Parameters.AddWithValue("@nick", nick);
                                 atualizarSaldoCommand.ExecuteNonQuery();
 
-                                // Inserir a transação na tabela Projeto_transaction
-                                SqlCommand inserirTransacaoCommand = new SqlCommand("INSERT INTO Projeto_transaction (type, date, value, id_jogador) VALUES (@tipoTransacao, GETDATE(), @valor, @id_jogador)", connection);
+                                // Inserir a transação na tabela Projeto_transactions
+                                SqlCommand inserirTransacaoCommand = new SqlCommand("INSERT INTO Projeto_transactions (type, date, value, id_jogador) VALUES (@tipoTransacao, GETDATE(), @valor, @id_jogador)", connection);
                                 inserirTransacaoCommand.Parameters.AddWithValue("@tipoTransacao", tipoTransacao);
                                 inserirTransacaoCommand.Parameters.AddWithValue("@valor", valor);
                                 inserirTransacaoCommand.Parameters.AddWithValue("@id_jogador", idJogador);
