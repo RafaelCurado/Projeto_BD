@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\G1Problema3.csproj": {}
+    "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\forms1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\G1Problema3.csproj": {
+    "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\forms1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\G1Problema3.csproj",
-        "projectName": "G1Problema3",
-        "projectPath": "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\G1Problema3.csproj",
+        "projectUniqueName": "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\forms1.csproj",
+        "projectName": "forms1",
+        "projectPath": "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\forms1.csproj",
         "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\João\\Desktop\\APTF\\Projeto_BD\\forms1\\G1Problema3\\obj\\",
         "projectStyle": "PackageReference",

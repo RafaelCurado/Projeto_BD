@@ -41,7 +41,7 @@ namespace G1Problema3
                 if (CN.State == ConnectionState.Open)
                 {
 
-                    SqlCommand sqlcmd = new SqlCommand("SELECT * FROM Projeto_settings", CN);
+                    SqlCommand sqlcmd = new SqlCommand("SELECT * from settings_view", CN);
 
                     da = new SqlDataAdapter(sqlcmd);
                     ds = new DataSet();

@@ -26,6 +26,13 @@ namespace G1Problema3
             listView1.Columns.Add("Region", 100, HorizontalAlignment.Left);
             listView1.Columns.Add("Nick", 100, HorizontalAlignment.Left);
             listView1.View = View.Details;
+
+            listView2.Columns.Add("Name", 200);
+            listView2.View = View.Details;
+
+            listView3.Columns.Add("Name", 110);
+            listView3.Columns.Add("Descrição", 100, HorizontalAlignment.Left);
+            listView3.View = View.Details;
         }
 
             private string getTableContent(SqlConnection CN)
@@ -86,40 +93,47 @@ namespace G1Problema3
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem selectedItem = listView1.SelectedItems[0];
 
                 string column1Value = selectedItem.SubItems[0].Text;
 
-                SqlConnection CN = new SqlConnection(a);
-
-                listView2.Columns.Add("Name", 110);
-                listView2.Columns.Add("Habilidade 1", 100, HorizontalAlignment.Left);
-                listView2.Columns.Add("Habilidade 2", 100, HorizontalAlignment.Left);
-                listView2.Columns.Add("Habilidade 3", 100, HorizontalAlignment.Left);
-                listView2.View = View.Details;
+                SqlConnection CN = new SqlConnection(a);     
+                         
 
                 try
                 {
                     CN.Open();
                     if (CN.State == ConnectionState.Open)
                     {
-
-                        SqlCommand sqlcmd = new SqlCommand("SELECT * FROM Projeto_personagem", CN);
-
-                        da = new SqlDataAdapter(sqlcmd);
-                        ds = new DataSet();
-                        da.Fill(ds, "Form1");
-                        dt = ds.Tables["Form1"];
-                        int i;
-                        for (i = 0; i <= dt.Rows.Count - 1; i++)
+                        if (listView1.SelectedItems.Count > 0)
                         {
-                            listView2.Items.Add(dt.Rows[i].ItemArray[0].ToString());
-                            listView2.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
-                            listView2.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
-                            listView2.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
+                            listView2.Items.Clear();
+                            listView3.Items.Clear();
+
+
+                            // Definir largura da primeira coluna para 100 pixels
+
+                            string nick = listView1.SelectedItems[0].SubItems[3].Text;
+
+                            // Executar a query com o valor do nick
+                            SqlCommand query = new SqlCommand("SELECT nome_personagem FROM obter_nome_personagem('" + nick + "');",CN);
+
+                            // Resto do código para executar a query e processar os resultados
+                            da = new SqlDataAdapter(query);
+                            ds = new DataSet();
+                            da.Fill(ds, "Form1");
+                            dt = ds.Tables["Form1"];
+                            int i;
+                            for (i = 0; i <= dt.Rows.Count - 1; i++)
+                            {
+                                listView2.Items.Add(dt.Rows[i].ItemArray[0].ToString());
+                                
+                            }
                         }
+
                     }
                 }
                 catch (Exception ex)
@@ -163,15 +177,8 @@ namespace G1Problema3
                 ListViewItem selectedItem = listView1.SelectedItems[0];
 
                 string column1Value = selectedItem.SubItems[0].Text;
-                //string column2Value = selectedItem.SubItems[1].Text;
-                //string column3Value = selectedItem.SubItems[2].Text;
-                //string column4Value = selectedItem.SubItems[3].Text;
 
                 SqlConnection CN = new SqlConnection(a);
-
-                listView3.Columns.Add("Name", 110);
-                listView3.Columns.Add("Descrição", 100, HorizontalAlignment.Left);
-                listView3.View = View.Details;
 
                 try
                 {
@@ -179,18 +186,35 @@ namespace G1Problema3
                     if (CN.State == ConnectionState.Open)
                     {
 
-                        SqlCommand sqlcmd = new SqlCommand("SELECT * FROM Projeto_habilidade", CN);
-
-                        da = new SqlDataAdapter(sqlcmd);
-                        ds = new DataSet();
-                        da.Fill(ds, "Form1");
-                        dt = ds.Tables["Form1"];
-                        int i;
-                        for (i = 0; i <= dt.Rows.Count - 1; i++)
+                        if (listView1.SelectedItems.Count > 0)
                         {
-                            listView3.Items.Add(dt.Rows[i].ItemArray[0].ToString());
-                            listView3.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
+                            listView3.Items.Clear();
+
+                            // Definir largura da primeira coluna para 100 pixels
+
+                            string personagem = listView2.SelectedItems[0].SubItems[0].Text;
+
+                            // Executar a query com o valor do nick
+                            SqlCommand query = new SqlCommand("SELECT habilidade_nome, habilidade_descricao FROM obter_habilidades_personagem('" + personagem + "');", CN);
+
+                            // Resto do código para executar a query e processar os resultados
+                            // ...
+                            da = new SqlDataAdapter(query);
+                            ds = new DataSet();
+                            da.Fill(ds, "Form1");
+                            dt = ds.Tables["Form1"];
+                            int i;
+                            for (i = 0; i <= dt.Rows.Count - 1; i++)
+                            {
+                                listView3.Items.Add(dt.Rows[i].ItemArray[0].ToString());
+                                listView3.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
+
+                            }
+                            //listView2.Columns[0].Width = 200;
                         }
+
+                                          
+                        
                     }
                 }
                 catch (Exception ex)
