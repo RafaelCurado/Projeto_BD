@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.exe
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.deps.json
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.runtimeconfig.json
@@ -35,3 +36,42 @@ D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.pdb
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.genruntimeconfig.cache
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\ref\forms1.dll
+=======
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.exe
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.deps.json
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.runtimeconfig.json
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\forms1.pdb
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.csproj.AssemblyReference.cache
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.AddJogadores.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.AddTransacao.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.AddTreinadores.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Equipas.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Jogadores.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Jogos.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Menu.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Ranking.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.RemoveJogadores.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.RemoverTreinadores.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Settings.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Torneio.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.Transacoes.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.Treinadores.resources
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.csproj.GenerateResource.cache
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.AssemblyInfoInputs.cache
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.AssemblyInfo.cs
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.csproj.CoreCompileInputs.cache
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.csproj.CopyComplete
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\refint\forms1.dll
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.pdb
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.genruntimeconfig.cache
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\ref\forms1.dll
+>>>>>>> 4743216d04a4d62fc70916f953662ddbf20e7528
