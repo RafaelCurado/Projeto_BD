@@ -47,7 +47,7 @@ namespace G1Problema3
                 if (CN.State == ConnectionState.Open)
                 {
 
-                    SqlCommand sqlcmd = new SqlCommand("SELECT * FROM Projeto_jogo", CN);
+                    SqlCommand sqlcmd = new SqlCommand("SELECT j.id_jogo, e1.nome AS equipa_1, e2.nome AS equipa_2, j.id_torneio, j.date, j.result, j.duration\r\nFROM Projeto_jogo j\r\nJOIN Projeto_equipa e1 ON j.id_equipa1 = e1.id_equipa\r\nJOIN Projeto_equipa e2 ON j.id_equipa2 = e2.id_equipa;\r\n", CN);
 
                     da = new SqlDataAdapter(sqlcmd);
                     ds = new DataSet();
