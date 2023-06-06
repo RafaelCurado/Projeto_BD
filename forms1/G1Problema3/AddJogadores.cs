@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,31 @@ namespace G1Problema3
         public AddJogadores()
         {
             InitializeComponent();
+            using (SqlConnection connection = new SqlConnection(a))
+            {
+                string query = "SELECT name FROM Projeto_personagem";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBox1.Items.Add(reader["name"].ToString());
+                }
+
+                reader.Close();
+            }
+            comboBox2.Items.Add("PC");
+            comboBox2.Items.Add("PS4");
+            comboBox2.Items.Add("Xbox");
+
+            comboBox3.Items.Add("English");
+            comboBox3.Items.Add("Spanish");
+            comboBox3.Items.Add("French");
+            comboBox3.Items.Add("German");
+            comboBox3.Items.Add("Italian");
         }
 
 
@@ -29,7 +55,9 @@ namespace G1Problema3
             string name = textBox1.Text;
             String region = textBox2.Text;
             String nick = textBox3.Text;
-            string personagem = "Personagem 1";
+            string personagem = comboBox1.Text;
+            string platform = comboBox2.Text;
+            string language = comboBox3.Text;
             int score = 1000;
 
 
@@ -39,17 +67,11 @@ namespace G1Problema3
                 CN.Open();
                 if (CN.State == ConnectionState.Open)
                 {
-                    //SqlCommand cmd = new SqlCommand("select max(id) from Projeto_jogador");
-
                     if (name == "")
                     {
                         MessageBox.Show("Invalid Name");
                     }
                     else {
-
-                        //SqlCommand sqlcmd = new SqlCommand("insert into [Projeto_jogador] (name,region,nick,personagem_name) values(\'" + name + "\', \'" + region + "\', \'" + nick + "\', 'Personagem 3');", CN);
-                        //SqlCommand sqlcmd = new SqlCommand("SET IDENTITY_INSERT Projeto_jogador ON insert into [Projeto_jogador] (id, name,region,nick,personagem_name) values(14, 'pedro', 'guarda', 'zezoca', 'Personagem 2');", CN);
-                        //sqlcmd.ExecuteNonQuery();
 
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = CN;
@@ -63,6 +85,24 @@ namespace G1Problema3
                         cmd.CommandText = "sp_add_jogador";
 
                         int result = cmd.ExecuteNonQuery();
+
+                        using (SqlConnection connection = new SqlConnection(a))
+                        {
+                            string query = "SELECT MAX(id) FROM Projeto_jogador";
+
+                            SqlCommand co = new SqlCommand(query, connection);
+                            connection.Open();
+
+                            int maxID = Convert.ToInt32(co.ExecuteScalar());
+
+                            SqlCommand command = new SqlCommand("insert into [Projeto_settings] (id_jogador,language,platform) values(\'" + maxID + "\',\'" + language + "\', \'" + platform + "\');", CN);
+                            int result2 = command.ExecuteNonQuery();
+
+                            // Use o valor maxID conforme necessário
+                        }
+
+
+                        
 
 
 
@@ -108,6 +148,21 @@ namespace G1Problema3
             {
                 e.Handled = true; // Ignore the space character
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
