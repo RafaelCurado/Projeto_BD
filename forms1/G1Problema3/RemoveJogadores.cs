@@ -77,18 +77,26 @@ namespace G1Problema3
                             END CATCH; 
                         ";
 
-                        String resultado = sqlQuery.Replace("introduzir_nick",nick);
+                        String resultado = sqlQuery.Replace("introduzir_nick", nick);
 
                         //MessageBox.Show(resultado);
 
-                        using (SqlCommand command = new SqlCommand(resultado, CN ))
+                        using (SqlCommand command = new SqlCommand(resultado, CN))
                         {
                             command.Parameters.AddWithValue("@jogadorNick", nick);
 
                             int rowsAffected = command.ExecuteNonQuery();
-                            Console.WriteLine($"{rowsAffected} rows deleted.");
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine($"{rowsAffected} rows deleted.");
+                                MessageBox.Show("Jogador removido com sucesso");
+                            }
+                            else
+                            {
+                                MessageBox.Show("O jogador não existe!");
+                            }
                         }
-                        MessageBox.Show("Jogador removido com sucesso");
+
                     }
                     // Mudar na linha anterior o nome da table "Hello" para outro nome que esteja na bd
                 }
