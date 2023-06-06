@@ -50,7 +50,7 @@ namespace forms1
                     {
                         connection.Open();
 
-                        // Criar o comando SQL para obter o ID do jogador
+                    // Criar o comando SQL para obter o ID do jogador
                         SqlCommand command = new SqlCommand("SELECT id FROM Projeto_jogador WHERE nick = @nick", connection);
                         command.Parameters.AddWithValue("@nick", nick);
 
@@ -103,13 +103,16 @@ namespace forms1
                             command.Parameters.AddWithValue("@tipoTransacao", tipoTransacao);
                             command.Parameters.AddWithValue("@valor", valor);
 
-                            
+                            command.ExecuteNonQuery();
+
+
+
                             command = new SqlCommand("UPDATE Projeto_jogador SET balance = balance + @valor WHERE id = @idJogador", connection);
                             command.Parameters.AddWithValue("@idJogador", idJogador);
                             command.Parameters.AddWithValue("@valor", valor);
 
-                        // Executar o comando SQL
-                        int rowsAffected = command.ExecuteNonQuery();
+                            // Executar o comando SQL
+                            int rowsAffected = command.ExecuteNonQuery();
 
                             if (rowsAffected > 0)
                             {
