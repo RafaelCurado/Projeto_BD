@@ -40,8 +40,5 @@
     <Compile Update="AddJogadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Treinador.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>
