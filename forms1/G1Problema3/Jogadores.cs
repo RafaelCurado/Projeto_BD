@@ -28,6 +28,7 @@ namespace G1Problema3
             listView1.Columns.Add("Name", 140, HorizontalAlignment.Left);
             listView1.Columns.Add("Region", 100, HorizontalAlignment.Left);
             listView1.Columns.Add("Nick", 100, HorizontalAlignment.Left);
+            listView1.Columns.Add("Balance", 100, HorizontalAlignment.Left);
             listView1.View = View.Details;
 
             listView2.Columns.Add("Name", 200);
@@ -68,7 +69,8 @@ namespace G1Problema3
                                 listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
                                 listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
                                 listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[3].ToString());
-                            }
+                                listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[5].ToString());
+                        }
                             
                         }
                     }
@@ -314,7 +316,7 @@ namespace G1Problema3
                 {
                         try
                         {
-                            SqlCommand query = new SqlCommand("SELECT id, name, region, nick FROM Projeto_jogador WHERE nick = @nick", CN);
+                            SqlCommand query = new SqlCommand("SELECT id, name, region, nick FROM Projeto_jogador WITH(INDEX(idx_Projeto_jogador_nick)) WHERE nick = @nick", CN);
                             query.Parameters.AddWithValue("@nick", nick);
 
                             SqlDataAdapter da = new SqlDataAdapter(query);

@@ -48,7 +48,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(14, 101);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(413, 295);
+            this.listView1.Size = new System.Drawing.Size(482, 295);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
@@ -66,7 +66,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(304, 404);
+            this.button2.Location = new System.Drawing.Point(373, 404);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 37);
@@ -130,7 +130,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(161, 404);
+            this.button5.Location = new System.Drawing.Point(193, 404);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(137, 37);
             this.button5.TabIndex = 19;
@@ -142,7 +142,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(146, 68);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 27);
+            this.textBox1.Size = new System.Drawing.Size(221, 27);
             this.textBox1.TabIndex = 20;
             // 
             // label3
@@ -157,7 +157,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(304, 68);
+            this.button1.Location = new System.Drawing.Point(373, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 29);
             this.button1.TabIndex = 22;
