@@ -26,7 +26,7 @@ namespace G1Problema3
             SqlConnection CN = new SqlConnection(a);
             var content = getTableContent(CN);
 
-            listView1.Columns.Add("ID", 80);
+            listView1.Columns.Add("Nick", 80);
             listView1.Columns.Add("Language", 80, HorizontalAlignment.Left);
             listView1.Columns.Add("Platform", 80, HorizontalAlignment.Left);
             listView1.View = View.Details;
@@ -42,7 +42,7 @@ namespace G1Problema3
                 if (CN.State == ConnectionState.Open)
                 {
 
-                    SqlCommand sqlcmd = new SqlCommand("SELECT * from settings_view", CN);
+                    SqlCommand sqlcmd = new SqlCommand("SELECT j.nick, s.language, s.platform\r\nFROM settings_view s\r\nJOIN Projeto_jogador j ON j.id = s.id_jogador;\r\n", CN);
 
                     da = new SqlDataAdapter(sqlcmd);
                     ds = new DataSet();

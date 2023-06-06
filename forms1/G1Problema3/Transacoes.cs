@@ -25,7 +25,7 @@ namespace forms1
             SqlConnection CN = new SqlConnection(a);
             var content = getTableContent(CN);
 
-            listView1.Columns.Add("Jogador", 150);
+            listView1.Columns.Add("Nick", 150);
             listView1.Columns.Add("Type", 100, HorizontalAlignment.Left);
             listView1.Columns.Add("Date", 150, HorizontalAlignment.Left);
             listView1.Columns.Add("Value", 70, HorizontalAlignment.Left);
@@ -42,7 +42,7 @@ namespace forms1
                 if (CN.State == ConnectionState.Open)
                 {
 
-                    SqlCommand sqlcmd = new SqlCommand("SELECT t.*, j.name AS nome_jogador FROM Projeto_transactions t INNER JOIN Projeto_jogador j ON t.id_jogador = j.id;", CN);
+                    SqlCommand sqlcmd = new SqlCommand("SELECT t.*, j.nick AS nome_jogador FROM Projeto_transactions t INNER JOIN Projeto_jogador j ON t.id_jogador = j.id;", CN);
 
                     da = new SqlDataAdapter(sqlcmd);
                     ds = new DataSet();
