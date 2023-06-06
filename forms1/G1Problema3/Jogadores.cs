@@ -7,12 +7,14 @@ using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing;
 using System.Security.Cryptography;
 using static System.Formats.Asn1.AsnWriter;
+using forms1;
 
 namespace G1Problema3
 {
     public partial class Jogadores : Form
     {
-        String a = "Data Source = mednat.ieeta.pt\\SQLSERVER,8101; Initial Catalog = p1g1; uid = p1g1; password = apexlol";
+        String a = "Data Source = " + AppData.DB_STRING + "; " + "Initial Catalog = " + AppData.username + "; uid = " + AppData.username + "; " + "password = " + AppData.password;
+
         DataTable dt;
         SqlDataAdapter da;
         DataSet ds;

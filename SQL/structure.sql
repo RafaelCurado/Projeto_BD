@@ -27,7 +27,7 @@ CREATE TABLE [Projeto_jogador] (
     [id] INTEGER NOT NULL IDENTITY(1, 1) UNIQUE,
     [name] VARCHAR(255) NULL,
     [region] VARCHAR(50) NULL,
-    [nick] VARCHAR(255) NULL UNIQUE,
+    [nick] VARCHAR(255) NULL UNIQUE CHECK (nick NOT LIKE '% %'),
 	[personagem_name] VARCHAR(255),
 	[balance] INTEGER DEFAULT 0,
     PRIMARY KEY ([id]),
