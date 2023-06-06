@@ -1,5 +1,4 @@
-﻿using forms1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,25 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace G1Problema3
+namespace forms1
 {
-    public partial class RemoveJogadores : Form
+    public partial class RemoverTreinadores : Form
     {
-        String a = "Data Source = " + AppData.DB_STRING + "; " + "Initial Catalog = " + AppData.username + "; uid = " + AppData.username + "; " + "password = " + AppData.password;
+        String a = "Data Source = mednat.ieeta.pt\\SQLSERVER,8101; Initial Catalog = p1g1; uid = p1g1; password = apexlol";
 
-        public RemoveJogadores()
+        public RemoverTreinadores()
         {
             InitializeComponent();
         }
 
-
         private string getTableContent(SqlConnection CN)
         {
 
-            string nick = textBox3.Text;
+            string nick = textBox1.Text;
 
 
             try
@@ -77,11 +74,11 @@ namespace G1Problema3
                             END CATCH; 
                         ";
 
-                        String resultado = sqlQuery.Replace("introduzir_nick",nick);
+                        String resultado = sqlQuery.Replace("introduzir_nick", nick);
 
                         //MessageBox.Show(resultado);
 
-                        using (SqlCommand command = new SqlCommand(resultado, CN ))
+                        using (SqlCommand command = new SqlCommand(resultado, CN))
                         {
                             command.Parameters.AddWithValue("@jogadorNick", nick);
 
@@ -109,11 +106,5 @@ namespace G1Problema3
             SqlConnection CN = new SqlConnection(a);
             var content = getTableContent(CN);
         }
-
-        private void RemoveJogadores_Load(object sender, EventArgs e)
-        {
-
-        }
     }
-
 }

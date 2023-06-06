@@ -56,9 +56,9 @@ namespace G1Problema3
                     int i;
                     for (i = 0; i <= dt.Rows.Count - 1; i++)
                     {
-                        listView1.Items.Add(dt.Rows[i].ItemArray[6].ToString());
-                        listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[7].ToString());
+                        listView1.Items.Add(dt.Rows[i].ItemArray[7].ToString());
                         listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[8].ToString());
+                        listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[9].ToString());
 
                     }
                 }

@@ -20,7 +20,6 @@ C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windo
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.RemoveJogadores.resources
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Settings.resources
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Torneio.resources
-C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\G1Problema3.Treinador.resources
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.csproj.GenerateResource.cache
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.AssemblyInfoInputs.cache
@@ -70,4 +69,8 @@ D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.genruntimeconfig.cache
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\ref\forms1.dll
 C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.Treinadores.resources
+<<<<<<< Updated upstream
 D:\Universidade\ANO3\BD\projeto\trabalho_final\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.Treinadores.resources
+=======
+C:\Users\João\Desktop\APTF\Projeto_BD\forms1\G1Problema3\obj\Debug\net6.0-windows\forms1.RemoverTreinadores.resources
+>>>>>>> Stashed changes

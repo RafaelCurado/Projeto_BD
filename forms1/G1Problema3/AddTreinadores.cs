@@ -36,12 +36,8 @@ namespace G1Problema3
                 {
                     //SqlCommand cmd = new SqlCommand("select max(id) from Projeto_jogador");
 
-                    if (name == "")
-                    {
-                        MessageBox.Show("Invalid Name");
-                    }
-                    else
-                    {
+                    
+                    
 
                         SqlCommand sqlcmd = new SqlCommand("insert into [Projeto_treinador] (name,region) values(\'" + name + "\', \'" + region + "\');", CN);
                         //SqlCommand sqlcmd = new SqlCommand("SET IDENTITY_INSERT Projeto_jogador ON insert into [Projeto_jogador] (id, name,region,nick,personagem_name) values(14, 'pedro', 'guarda', 'zezoca', 'Personagem 2');", CN);
@@ -56,7 +52,7 @@ namespace G1Problema3
 
 
 
-                    }
+                    
                     // Mudar na linha anterior o nome da table "Hello" para outro nome que esteja na bd
                 }
             }
