@@ -83,7 +83,7 @@ namespace G1Problema3
 
                         using (SqlCommand command = new SqlCommand(resultado, CN))
                         {
-                            command.Parameters.AddWithValue("@jogadorNick", nick);
+                            //command.Parameters.AddWithValue("@jogadorNick", nick);
 
                             int rowsAffected = command.ExecuteNonQuery();
                             if (rowsAffected > 0)

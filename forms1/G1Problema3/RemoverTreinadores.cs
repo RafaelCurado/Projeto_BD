@@ -40,31 +40,15 @@ namespace forms1
                     {
 
                         string sqlQuery = @"
-                            DECLARE @jogadorId INT = 0; 
-
+                            DECLARE @treinadorId INT = 0; 
                             BEGIN TRANSACTION; 
                             BEGIN TRY 
-                                SET @jogadorId = (SELECT id FROM Projeto_jogador WHERE nick = 'introduzir_nick'); 
-                                DELETE FROM Projeto_settings WHERE id_jogador = @jogadorId; 
-                                DELETE FROM Projeto_transactions WHERE id_jogador = @jogadorId; 
-                                DELETE FROM Projeto_ranking WHERE id_jogador = @jogadorId; 
-                                DELETE FROM Projeto_jogo WHERE id_equipa1 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador1 = @jogadorId) 
-                                    OR id_equipa2 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador1 = @jogadorId) 
-                                    OR id_equipa1 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador2 = @jogadorId) 
-                                    OR id_equipa2 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador2 = @jogadorId) 
-                                    OR id_equipa1 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador3 = @jogadorId) 
-                                    OR id_equipa2 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador3 = @jogadorId) 
-                                    OR id_equipa1 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador4 = @jogadorId) 
-                                    OR id_equipa2 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador4 = @jogadorId) 
-                                    OR id_equipa1 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador5 = @jogadorId) 
-                                    OR id_equipa2 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_jogador5 = @jogadorId); 
-                                DELETE FROM Projeto_equipa 
-                                WHERE id_jogador1 = @jogadorId 
-                                    OR id_jogador2 = @jogadorId 
-                                    OR id_jogador3 = @jogadorId 
-                                    OR id_jogador4 = @jogadorId 
-                                    OR id_jogador5 = @jogadorId; 
-                                DELETE FROM Projeto_jogador WHERE id = @jogadorId; 
+                                SET @treinadorId = (SELECT id FROM Projeto_treinador WHERE name = 'introduzir_nome'); 
+                                DELETE FROM Projeto_jogo 
+		                        WHERE  id_equipa1 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_treinador = @treinadorId) 
+                                    OR id_equipa2 IN (SELECT id_equipa FROM Projeto_equipa WHERE id_treinador = @treinadorId) 
+                                DELETE FROM Projeto_equipa WHERE id_treinador = @treinadorId; 
+                                DELETE FROM Projeto_treinador WHERE id = @treinadorId; 
                                 COMMIT; 
                             END TRY 
                             BEGIN CATCH 
@@ -74,18 +58,25 @@ namespace forms1
                             END CATCH; 
                         ";
 
-                        String resultado = sqlQuery.Replace("introduzir_nick", nick);
+                        String resultado = sqlQuery.Replace("introduzir_nome", nick);
 
                         //MessageBox.Show(resultado);
 
                         using (SqlCommand command = new SqlCommand(resultado, CN))
                         {
-                            command.Parameters.AddWithValue("@jogadorNick", nick);
+                            //command.Parameters.AddWithValue("@jogadorNick", nick);
 
                             int rowsAffected = command.ExecuteNonQuery();
-                            Console.WriteLine($"{rowsAffected} rows deleted.");
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine($"{rowsAffected} rows deleted.");
+                                MessageBox.Show("Treinador removido com sucesso");
+                            }
+                            else
+                            {
+                                MessageBox.Show("O treinador não existe!");
+                            }
                         }
-                        MessageBox.Show("Jogador removido com sucesso");
                     }
                     // Mudar na linha anterior o nome da table "Hello" para outro nome que esteja na bd
                 }
